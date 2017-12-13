@@ -22,28 +22,28 @@ class BaseClass(unittest.TestCase):
 
         # user credentials for registering user
         self.registration_payload = {
-                        'first_name': 'david',
-                        'second_name': 'mukiibi',
-                        'email': 'david.mukiibi@yahoo.com',
-                        'password': '12345678902'
+                        "first_name": "david",
+                        "second_name": "mukiibi",
+                        "email": "david.mukiibi@yahoo.com",
+                        "password": "12345678902"
                     }
 
         # user credentials for logging in user
-        self.login_payload = {'email': 'david.mukiibi@yahoo.com',
-                        'password': '12345678902'
+        self.login_payload = {"email": "david.mukiibi@yahoo.com",
+                        "password": "12345678902"
                     }
-        self.url_prefix = '/api/v1'
+        self.url_prefix = "/api/v1"
 
-        self.test_client.post(self.url_prefix + '/auth/register/', data=self.registration_payload)
-        login_instance = self.test_client.post(self.url_prefix + '/auth/login/', data=self.login_payload)
-        response = json.loads(login_instance.data.decode('utf-8'))
-        self.token = response['token']['access_token']
+        self.test_client.post(self.url_prefix + "/auth/register/", data=self.registration_payload)
+        login_instance = self.test_client.post(self.url_prefix + "/auth/login/", data=self.login_payload)
+        response = json.loads(login_instance.data.decode("utf-8"))
+        self.token = response["token"]["access_token"]
 
         # creating a bucketlist
-        self.new_bucketlist = {'name': 'go to jamaica once again!'}
+        self.new_bucketlist = {"name": "go to jamaica once again!"}
 
         # Bucketlist item details for item creation
-        self.new_bucketlist_item = {'name': 'book a flight'}
+        self.new_bucketlist_item = {"name": "book a flight"}
 
 
     def tearDown(self):
