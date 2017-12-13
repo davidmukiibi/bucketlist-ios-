@@ -42,7 +42,7 @@ class TestLoginUser(BaseClass):
         response = self.test_client.post(self.url_prefix + '/auth/login/', data=data2)
         new_data = json.loads(response.data.decode('utf-8'))
         self.assertTrue(response.status_code == 400)
-        self.assertTrue(new_data['message'] == 'Wrong password!')
+        self.assertTrue(new_data['message'] == 'You enterd a wrong password!')
 
 
     def test_logging_in_user_without_email(self):
