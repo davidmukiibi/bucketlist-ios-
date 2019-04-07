@@ -7,7 +7,7 @@ jobs:
       - run:
           name: check if repo belongs to us or not
           command: |
-            if [ "$CIRCLE_REPOSITORY_URL" == "your repository url" ]; then
+            if [ "$CIRCLE_REPOSITORY_URL" == "https://github.com/davidmukiibi/bucketlist-ios-" ]; then
               exit 0
             else
               echo "This is a forked repo, no tests will run for this one."
